@@ -1,0 +1,27 @@
+{
+  "name": "bot_discord",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VictorMerida/bot_discord.git"
+  },
+  "author": "Viktorovich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VictorMerida/bot_discord/issues"
+  },
+  "homepage": "https://github.com/VictorMerida/bot_discord#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.7.0",
+    "dotenv": "^16.0.3",
+    "glob": "^8.0.3",
+    "mongoose": "^6.7.4",
+    "node": "^19.2.0"
+  }
+}
