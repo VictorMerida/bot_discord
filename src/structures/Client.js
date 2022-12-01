@@ -1,5 +1,5 @@
 const {Client, GatewayIntentBits, Partials, ActivityType, PresenceUpdateStatus, Collection} = require('discord.js');
-const Database = requiere('../database/mongoose');
+const Database = require('../database/mongoose');
 const BotUtils = require('./Utils');
 
 module.exports = class extends Client{
