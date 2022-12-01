@@ -1,4 +1,4 @@
-module.exports = client => {
+module.exports = async client => {
     console.log(`Sesion iniciada como ${client.user.tag}`.green);
 
     if(client?.application?.commands){

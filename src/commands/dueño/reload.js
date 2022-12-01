@@ -3,8 +3,8 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
     DESCRIPTION: "Recarga los archivos del bot.",
     OWNER: true,
-    async execute(client, message, args, prefix){
-        let opcion = "Comands, Events, Handlers";
+    async execute(client, message, args, prefix, GUILD_DATA){
+        let opcion = "Comands, Events y Handlers";
 
         try {
 
@@ -49,8 +49,9 @@ module.exports = {
             });
             
         } catch (e) {
-            message.reply({content: `**Ha ocurrido un error al recargar los archivos!**\n*Mira la consola para mas detalle!*`})
+            message.reply({content: `**Ha ocurrido un error al recargar los archivos!**\n*Mira la consola para mas detalle!*`, ephimeral: true})
             console.log(e);
+            return;
         }
     }
 }

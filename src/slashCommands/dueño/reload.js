@@ -13,9 +13,9 @@ module.exports = {
         )
     ),
 
-    async execute(client, interaction, prefix){
+    async execute(client, interaction, prefix, GUILD_DATA){
         let args = interaction.options.getString("modulo")
-        let opcion = "Comands, Events, Handlers";
+        let opcion = "Comands, Events y Handlers";
 
         try {
 
@@ -60,8 +60,9 @@ module.exports = {
             });
             
         } catch (e) {
-            message.reply({content: `**Ha ocurrido un error al recargar los archivos!**\n*Mira la consola para mas detalle!*`})
+            message.reply({content: `**Ha ocurrido un error al recargar los archivos!**\n*Mira la consola para mas detalle!*`, ephimeral: true})
             console.log(e);
+            return;
         }
     }
 

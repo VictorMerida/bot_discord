@@ -1,4 +1,5 @@
 const {Client, GatewayIntentBits, Partials, ActivityType, PresenceUpdateStatus, Collection} = require('discord.js');
+const Database = requiere('../database/mongoose');
 const BotUtils = require('./Utils');
 
 module.exports = class extends Client{
@@ -33,6 +34,8 @@ module.exports = class extends Client{
             ...options
         });
 
+        this.db = new Database();
+
         this.commands = new Collection();
         this.slashCommands = new Collection();
         this.slashArray = [];
@@ -47,6 +50,7 @@ module.exports = class extends Client{
         await this.loadHandlers();
         await this.loadCommands();
         await this.loadSlashCommands();
+        await this.db.connect();
 
         this.login(process.env.BOT_TOKEN)
     }

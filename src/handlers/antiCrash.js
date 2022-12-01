@@ -1,20 +1,24 @@
-module.exports = client => {
+module.exports = (client) => {
     process.removeAllListeners();
 
-    process.on("unhandledRejection", (reason, p) => {
-        console.log('[ANTICRASH] - ERROR ENCONTRDO');
-        console.log(reason, p);
+    process.on('unhandledRejection', (reason, p) => {
+        console.log('[ANTICRASH] ::  unhandledRejection'.grey);
+        console.log(reason, p + "".grey);
     });
 
     process.on("unhandledException", (err, origin) => {
-        console.log('[ANTICRASH] - ERROR ENCONTRDO');
-        console.log(err, origin);
+        console.log('[ANTICRASH] :: uncaughtException'.grey);
+        console.log(err, origin + "".grey);
     });
 
     process.on("uncaughtExceptionMonitor", (err, origin) => {
-        console.log('[ANTICRASH] - ERROR ENCONTRDO');
-        console.log(err, origin);
+        console.log('[ANTICRASH] :: uncaughtExceptionMonitor'.grey);
+        console.log(err, origin + "".grey);
     });
 
     process.on("multipleResolves", () => {});
+
+    process.on('SIGINT', () => process.exit());
+    process.on('SIGUSR1', () => process.exit());
+    process.on('SIGUSR2', () => process.exit());
 }
